@@ -7,7 +7,7 @@ export async function GET(request) {
     try {
         // 1. Authenticate (Next.js 15 cookies inside lib/auth.js)
         const userPayload = await getAuthUser()
-        if (!userPayload) return apiError('Unauthorized', 401)
+        if (!userPayload) return apiResponse({ user: null, authenticated: false })
 
         // 2. Database connection
         await dbConnect()
