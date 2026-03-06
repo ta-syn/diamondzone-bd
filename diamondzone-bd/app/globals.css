@@ -1,0 +1,103 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #060910;
+  color: #e8f4f8;
+  font-family: 'Rajdhani', sans-serif;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: linear-gradient(rgba(0, 212, 255, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 212, 255, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+  z-index: 0;
+  animation: gridMove 20s linear infinite;
+}
+
+@keyframes gridMove {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  100% {
+    transform: translate(60px, 60px);
+  }
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #060910;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e2d3d;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00d4ff;
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-gradient-to-r from-accent to-cyan-600 text-bg font-bold font-rajdhani tracking-widest uppercase px-6 py-3 rounded transition-all duration-200 hover:-translate-y-0.5 hover:shadow-glow-lg;
+  }
+
+  .btn-fire {
+    @apply bg-gradient-to-r from-accent2 to-orange-700 text-white font-bold font-rajdhani tracking-widest uppercase px-6 py-3 rounded transition-all duration-200 hover:-translate-y-0.5 hover:shadow-glow-orange;
+  }
+
+  .btn-secondary {
+    @apply bg-surface2/80 text-white border border-border font-bold font-rajdhani tracking-widest uppercase px-6 py-3 rounded transition-all duration-200 hover:-translate-y-0.5 hover:border-secondary hover:shadow-glow-secondary;
+  }
+
+
+  .btn-outline {
+    @apply border border-border text-muted font-bold font-rajdhani tracking-widest uppercase px-6 py-3 rounded transition-all duration-200 hover:border-accent hover:text-accent;
+  }
+
+  .card {
+    @apply bg-surface border border-border rounded-xl overflow-hidden;
+  }
+
+  .input-field {
+    @apply w-full bg-surface border border-border rounded-lg px-4 py-3 text-white font-rajdhani text-base outline-none transition-all duration-200 focus:border-accent focus:shadow-glow;
+  }
+
+  .badge-pending {
+    @apply bg-yellow-400/15 text-yellow-400 text-xs font-bold tracking-wider uppercase px-3 py-1 rounded-full;
+  }
+
+  .badge-processing {
+    @apply bg-accent/15 text-accent text-xs font-bold tracking-wider uppercase px-3 py-1 rounded-full;
+  }
+
+  .badge-completed {
+    @apply bg-success/15 text-success text-xs font-bold tracking-wider uppercase px-3 py-1 rounded-full;
+  }
+
+  .badge-cancelled {
+    @apply bg-danger/15 text-danger text-xs font-bold tracking-wider uppercase px-3 py-1 rounded-full;
+  }
+
+  .badge-refunded {
+    @apply bg-accent2/15 text-accent2 text-xs font-bold tracking-wider uppercase px-3 py-1 rounded-full;
+  }
+}
