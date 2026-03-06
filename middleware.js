@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server'
 import { jwtVerify } from 'jose'
 
-const secret = new TextEncoder().encode(process.env.JWT_SECRET)
+const secret = new TextEncoder().encode(process.env.JWT_SECRET || 'temporary-secret-for-demo-purposes-only')
 
 export async function middleware(request) {
     const { pathname } = request.nextUrl
