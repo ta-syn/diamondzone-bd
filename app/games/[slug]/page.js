@@ -49,17 +49,17 @@ export default async function GameRechargePage({ params }) {
 
     await dbConnect()
 
-    const game = await Game.findOne({ slug, status: 'active' }).lean()
-    if (!game) notFound()
+    const game = await Game.findOne({ slug, status: 'active' }).lean().catch(() => null)
+    if (!game) return notFound()
 
     const packages = await Package.find({
         game_id: game._id,
         status: 'active'
-    }).sort({ sort_order: 1 }).lean()
+    }).sort({ sort_order: 1 }).lean().catch(() => [])
 
     // Convert to plain objects for client components
-    const gameData = JSON.parse(JSON.stringify(game))
-    const packagesData = JSON.parse(JSON.stringify(packages))
+    const gameData = JSON.parse(JSON.stringify(game || {}))
+    const packagesData = JSON.parse(JSON.stringify(packages || []))
 
     return (
         <RechargePageClient
