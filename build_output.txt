@@ -1,0 +1,106 @@
+
+> diamondzone-bd@0.1.0 build
+> next build
+
+⚠ Warning: Next.js inferred your workspace root, but it may not be correct.
+ We detected multiple lockfiles and selected the directory of /Users/nishan/package-lock.json as the root directory.
+ To silence this warning, set `turbopack.root` in your Next.js config, or consider removing one of the lockfiles if it's not needed.
+   See https://nextjs.org/docs/app/api-reference/config/next-config-js/turbopack#root-directory for more information.
+ Detected additional lockfiles: 
+   * /Users/nishan/Downloads/gamee-webb/diamondzone-bd/package-lock.json
+
+▲ Next.js 16.1.6 (Turbopack)
+- Environments: .env.local
+
+⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+  Creating an optimized production build ...
+✓ Compiled successfully in 4.4s
+  Running TypeScript ...
+  Collecting page data using 7 workers ...
+  Generating static pages using 7 workers (0/63) ...
+  Generating static pages using 7 workers (15/63) 
+  Generating static pages using 7 workers (31/63) 
+  Generating static pages using 7 workers (47/63) 
+✓ Generating static pages using 7 workers (63/63) in 362.5ms
+  Finalizing page optimization ...
+
+Route (app)                              Revalidate  Expire
+┌ ○ /                                            5m      1y
+├ ○ /_not-found
+├ ○ /admin
+├ ○ /admin/coupons
+├ ƒ /admin/dashboard
+├ ○ /admin/games
+├ ○ /admin/orders
+├ ○ /admin/packages
+├ ○ /admin/settings
+├ ○ /admin/users
+├ ƒ /api/admin/coupons
+├ ƒ /api/admin/coupons/[id]
+├ ƒ /api/admin/games
+├ ƒ /api/admin/games/[id]
+├ ƒ /api/admin/orders
+├ ƒ /api/admin/orders/[id]
+├ ƒ /api/admin/orders/[id]/re-verify
+├ ƒ /api/admin/packages
+├ ƒ /api/admin/packages/[id]
+├ ƒ /api/admin/send-otp
+├ ƒ /api/admin/settings
+├ ƒ /api/admin/stats
+├ ƒ /api/admin/users
+├ ƒ /api/admin/users/[id]
+├ ƒ /api/admin/verify-otp
+├ ƒ /api/auth/login
+├ ƒ /api/auth/logout
+├ ƒ /api/auth/me
+├ ƒ /api/auth/register
+├ ƒ /api/coupons/validate
+├ ƒ /api/games
+├ ƒ /api/games/[slug]
+├ ƒ /api/orders
+├ ƒ /api/orders/[id]
+├ ƒ /api/packages/[gameId]
+├ ƒ /api/payment/initiate
+├ ƒ /api/payment/verify
+├ ƒ /api/payment/webhook
+├ ƒ /api/reseller/apply
+├ ƒ /api/reseller/recharge
+├ ƒ /api/reseller/stats
+├ ƒ /api/user/dashboard-stats
+├ ƒ /api/user/orders
+├ ƒ /api/user/profile
+├ ƒ /api/user/referrals
+├ ƒ /api/user/saved-ids
+├ ƒ /api/user/transactions
+├ ƒ /api/user/wallet/deposit
+├ ○ /auth/login
+├ ○ /auth/register
+├ ○ /blog
+├ ● /blog/[slug]
+│ ├ /blog/free-fire-diamond-buy-bd-2026
+│ ├ /blog/pubg-uc-recharge-bd-guide
+│ ├ /blog/mobile-legends-diamond-bkash
+│ └ [+3 more paths]
+├ ○ /checkout
+├ ○ /dashboard
+├ ○ /dashboard/orders
+├ ○ /dashboard/referral
+├ ○ /dashboard/wallet
+├ ○ /games                                      30m      1y
+├ ● /games/[slug]
+├ ○ /payment/fail
+├ ○ /payment/success
+├ ○ /reseller/dashboard
+├ ○ /reseller/orders
+├ ○ /reseller/recharge
+├ ○ /robots.txt
+├ ○ /sitemap.xml
+└ ○ /track
+
+
+ƒ Proxy (Middleware)
+
+○  (Static)   prerendered as static content
+●  (SSG)      prerendered as static HTML (uses generateStaticParams)
+ƒ  (Dynamic)  server-rendered on demand
+
